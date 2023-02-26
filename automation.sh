@@ -87,3 +87,16 @@ fi
 echo "Uploading file to S3 bucket S3 bucket"
 
 aws s3 cp /tmp/$filename s3://$s3_bckt//$filename
+
+#cron jon
+
+if [ -f "/etc/dron.d/automation" ]
+then
+	continue
+else
+	printf "0 0 * * * root/root/Automation_Poject/automaton.sh\n" > /etc/dron.d/automaton
+fi
+
+
+#update inventoy file
+
